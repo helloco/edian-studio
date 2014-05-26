@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Edian Studio</title>
+<script type="text/javascript" src='__PUBLIC__/Js/jquery_min.js'></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/lang/zh-cn/zh-cn.js"></script>
+</head>
+<body>
+<a href='{:U('Admin/Admin/admin')}'>博客</a>  <a href='{:U('Admin/Admin/addProductView')}'>作品</a>  <a href='Tpl/Admin/addProduct.html'>关于</a> 
+
+<form action="{:U('Admin/Admin/upload')}" method="post" enctype="multipart/form-data">
+作品名称：<input type="text" name="productName"><br>
+作品简介：<input type="text" name="introduce"><br>
+发布日期：<input type="text" name="birthday"><br>
+上传图片：<input type="file" name="imgSrc"><br>
+下载地址：<input type="text" name="downloadSrc"><br>
+<input type="submit">
+</form>
+</body>
+</html>

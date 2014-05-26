@@ -1,0 +1,112 @@
+[ 2014-05-18T23:33:37+08:00 ] 0.0.0.0 /zendStudio/edian/index.php/Index/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.006620s ]
+INFO: [ route_check ] --END-- [ RunTime:0.006723s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.014295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014396s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.052822s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052949s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.005800s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.004326s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.003650s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.004993s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.019021s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.004795s ]
+INFO: [ view_end ] --END-- [ RunTime:0.004880s ]
+
+[ 2014-05-18T23:33:39+08:00 ] 0.0.0.0 /zendStudio/edian/index.php/Index/Index/blog.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001112s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001204s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+SQL: SHOW COLUMNS FROM `edian_article` [ RunTime:0.042486s ]
+NOTIC: [8] Undefined variable: map I:\phpStudy\WWW\zendStudio\edian\Index\Lib\Action\Index\IndexAction.class.php 第 11 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `edian_article` LIMIT 1   [ RunTime:0.000742s ]
+NOTIC: [8] Undefined variable: map I:\phpStudy\WWW\zendStudio\edian\Index\Lib\Action\Index\IndexAction.class.php 第 21 行.
+SQL: SELECT * FROM `edian_article` ORDER BY time LIMIT 0,10   [ RunTime:0.001765s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.073794s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.073937s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001301s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001292s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001147s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001371s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005409s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000800s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000858s ]
+
+[ 2014-05-18T23:33:45+08:00 ] 0.0.0.0 /zendStudio/edian/index.php/Index/Index/blog/p/2.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000956s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001055s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000798s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000874s ]
+SQL: SHOW COLUMNS FROM `edian_article` [ RunTime:0.047907s ]
+NOTIC: [8] Undefined variable: map I:\phpStudy\WWW\zendStudio\edian\Index\Lib\Action\Index\IndexAction.class.php 第 11 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `edian_article` LIMIT 1   [ RunTime:0.000571s ]
+NOTIC: [8] Undefined variable: map I:\phpStudy\WWW\zendStudio\edian\Index\Lib\Action\Index\IndexAction.class.php 第 21 行.
+SQL: SELECT * FROM `edian_article` ORDER BY time LIMIT 10,10   [ RunTime:0.000878s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.033779s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033886s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000806s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000749s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000645s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000786s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003174s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000846s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000909s ]
+
+[ 2014-05-18T23:33:49+08:00 ] 0.0.0.0 /zendStudio/edian/index.php/Index/Index/content/id/19.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000979s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001081s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000820s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000904s ]
+SQL: SHOW COLUMNS FROM `edian_article` [ RunTime:0.045255s ]
+SQL: SELECT * FROM `edian_article` WHERE ( `id` = 19 )  [ RunTime:0.000549s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.031621s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031753s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000917s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000804s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000576s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000698s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003190s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000890s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000956s ]
+
+[ 2014-05-18T23:33:50+08:00 ] 0.0.0.0 /zendStudio/edian/index.php/Index/Index/content/id/sticky-footer-navbar.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001518s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001685s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+SQL: SHOW COLUMNS FROM `edian_article` [ RunTime:0.044637s ]
+SQL: SELECT * FROM `edian_article` WHERE ( `id` = 0 )  [ RunTime:0.001124s ]
+
+[ 2014-05-18T23:33:52+08:00 ] 0.0.0.0 /zendStudio/edian/index.php/Index/Index/content/id/sticky-footer-navbar.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001199s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001353s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000911s ]
+SQL: SHOW COLUMNS FROM `edian_article` [ RunTime:0.012691s ]
+SQL: SELECT * FROM `edian_article` WHERE ( `id` = 0 )  [ RunTime:0.000357s ]
+
