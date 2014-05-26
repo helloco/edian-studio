@@ -50,4 +50,14 @@ class AlterAction extends CommonAction{
 // 			$this->error('错误！！');
 // 		}
 	}
+	
+	public function  alterProduct(){
+		if (!empty($_POST['id'])) {
+			$data['kk'] = 'zhenghang';
+			$data = json_encode($data);
+			$this->ajaxReturn($data,'更新作品信息成功！',1);
+		}else{
+			$this->ajaxReturn(0,'您没有选择要修改的选项！',0);
+		}
+	}
 }

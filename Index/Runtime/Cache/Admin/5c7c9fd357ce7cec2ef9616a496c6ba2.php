@@ -752,7 +752,7 @@
 														</td>
 														
 														<td>
-															<input  type="hidden" value="<?php echo ($vo["id"]); ?>"/>
+															<input  type="hidden" id="ori_updateId" value="<?php echo ($vo["id"]); ?>"/>
 															<a href="#"><?php echo ($vo["name"]); ?></a>
 														</td>
 														<td><?php echo ($vo["introduce"]); ?></td>
@@ -823,17 +823,17 @@
 										<div>
 									  <ul class="pagination pagination-right" >
 									  
-									  <?php $__FOR_START_25061__=1;$__FOR_END_25061__=$pageCount+1;for($i=$__FOR_START_25061__;$i < $__FOR_END_25061__;$i+=1){ ?><li><a href="<?php echo U('Admin/Alter/alterProductView',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
+									  <?php $__FOR_START_13205__=1;$__FOR_END_13205__=$pageCount+1;for($i=$__FOR_START_13205__;$i < $__FOR_END_13205__;$i+=1){ ?><li><a href="<?php echo U('Admin/Alter/alterProductView',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
 									  </ul>
 									  </div>
 										<!-- /.table-responsive -->
 									</div><!-- /span -->
 								</div><!-- /row -->
-								<div id="list"></div>
+								
 								<div id="result"></div>
 								<div class="row">
 									<div class="col-xs-12">
-										<h3 class="header smaller lighter blue">修改信息</h3>
+										<h3 class="header smaller lighter blue" id="list">修改信息</h3>
 										
 
 										<div class="row">
@@ -841,10 +841,12 @@
 								<!-- PAGE CONTENT BEGINS -->
 
 								<form class="form-horizontal" role="form" action="<?php echo U('Admin/Admin/upload');?>" method="post" enctype="multipart/form-data">
+									
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 作品名称 </label>
-
+										
 										<div class="col-sm-9">
+											<input type="hidden" name="updateId" id="updateId"/>
 											<input type="text" name="productName" id="form-field-1" placeholder="作品名称" class="col-xs-10 col-sm-5">
 										</div>
 									</div>
@@ -897,7 +899,7 @@
 													
 												<div class="widget-body">
 													<div class="widget-main">
-														<input type="file" id="id-input-file-2"  name="imgSrc" />
+														<input type="file" id="id-input-file-2"  name="id-input-file-2" />
 														<label>
 															<input type="checkbox" name="file-format" id="id-file-format" class="ace" />
 															<span class="lbl"> Allow only images</span>
@@ -915,16 +917,13 @@
 
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">
-											<button class="btn btn-info" type="submit">
+											<button class="btn btn-info" type="button" onclick="updatePro();">
 												<i class="icon-ok bigger-110"></i>
 												Submit
 											</button>
 
 											&nbsp; &nbsp; &nbsp;
-											<button class="btn" type="reset">
-												<i class="icon-undo bigger-110"></i>
-												Reset
-											</button>
+											<h2><div id='result2'></div></h2>
 										</div>
 									</div>
 								</div>
@@ -1050,10 +1049,7 @@
 		function kk(){
 			alert('测试');
 		}
-		/* function transform(a){
-			
-			alert(a);
-		}*/
+		
 		</script>
 		<script language="JavaScript">
 		<!--
@@ -1069,12 +1065,33 @@
 			
 			var data = eval("("+data+")");
 			/*得到回调数据，开始赋值*/
+			$('updateId').value = data[0].id;
 			$('form-field-1').value = data[0].name;
 			$('form-field-2').value = data[0].introduce;
 			$('form-field-3').value = data[0].birthday;
 			$('form-field-4').value = data[0].download_src;
 			$('pro_img').src = "__ROOT__/Public/Uploads/"+data[0].img_src;
-			$('list').innerHTML = '<span style="color:blue">'+data[0].id+'你好!</span>';
+			$('list').innerHTML = '<span>修改id='+data[0].id+'的作品信息</span>';
+			}
+		}
+		//-->
+</script>
+
+<script language="JavaScript">
+		<!--
+		function updatePro(){
+			ThinkAjax.send('<?php echo U("Admin/Alter/alterProduct");?>','ajax=1&name='+$('form-field-1').value+'&introduce='+$('form-field-2').value+'&birthday='+$('form-field-3').value+'&download_src='+$('form-field-4').value+'&id='+$('updateId').value,complete2,'result2');
+		}
+		
+		
+		
+		function complete2(data,status){
+			if (status==1){
+			
+			var data = eval("("+data+")");
+			//alert('修改成功！');
+			}else{
+				//alert('您没有选择要修改的选项！');
 			}
 		}
 		//-->

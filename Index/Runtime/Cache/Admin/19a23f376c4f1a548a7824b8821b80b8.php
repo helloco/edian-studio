@@ -33,16 +33,26 @@ function complete(data,status){
 }
 //-->
 </script>
+<script type="text/javascript">
+function hi(){
+	var hv = document.getElementById('kk').value;
+	alert(hv);
+	var hv2 = document.getElementById('kk').value = "hidden value has changed";
+	alert(hv2);
+}
+</script>
 </head>
 <body>
 <div>
 <div id="result"></div>
 <div id="list"></div>
 <form name="login" id="form1" method="post">
-用户名: <input type="text" name="username" />
+<input type="hidden" id='kk' value="hidden value">
+用户名: <input type="text" name="username" id="username"/>
 <input type="button" value="检查用户名" onClick="checkName()"><br />
 密 码: <input type="password" name="password" /><br />
 <input type="button" onClick="loginCheck()" value="提 交" />
+<input type="button" onclick="hi();" value="给hidden赋值">
 </form>
 </div>
 
