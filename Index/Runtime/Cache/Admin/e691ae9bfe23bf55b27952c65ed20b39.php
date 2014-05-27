@@ -478,7 +478,7 @@
 							</a>
 
 							<ul class="submenu">
-								<li class="active">
+								<li>
 									<a href="<?php echo U('Admin/Alter/alterProductView');?>">
 										<i class="icon-double-angle-right"></i>
 										作品修改
@@ -491,8 +491,8 @@
 										博客修改
 									</a>
 								</li>
-								<li>
-									<a href="<?php echo U('Admin/Alter/alterFameList');?>">
+								<li class="active">
+									<a href="#">
 										<i class="icon-double-angle-right"></i>
 										Fame修改
 									</a>
@@ -735,15 +735,14 @@
 																<span class="lbl"></span>
 															</label>
 														</th>
-														<th>作品名称</th>
-														<th>简介</th>
-														<th class="hidden-480">发布日期</th>
+														<th>姓名</th>
+														<th>toast（简介）</th>
 
 														<th>
 															<i class="icon-time bigger-110 hidden-480"></i>
 															缩略图
 														</th>
-														<th class="hidden-480">链接</th>
+														<th class="hidden-480">链接（link）</th>
 
 														<th></th>
 													</tr>
@@ -762,12 +761,11 @@
 															<input  type="hidden" id="ori_updateId" value="<?php echo ($vo["id"]); ?>"/>
 															<a href="#"><?php echo ($vo["name"]); ?></a>
 														</td>
-														<td><?php echo ($vo["introduce"]); ?></td>
-														<td class="hidden-480"><?php echo ($vo["birthday"]); ?></td>
+														<td><?php echo ($vo["toast"]); ?></td>
 														<td><?php echo ($vo["img_src"]); ?></td>
 
 														<td class="hidden-480">
-															<span class="label label-sm label-success"><a href=' <?php echo ($vo["download_src"]); ?> ' target=_blank/> <?php echo ($vo["download_src"]); ?> </a></span>
+															<span class="label label-sm label-success"><a href=' <?php echo ($vo["link"]); ?> ' target=_blank/> <?php echo ($vo["link"]); ?> </a></span>
 														</td>
 
 														<td>
@@ -830,7 +828,7 @@
 										<div>
 									  <ul class="pagination pagination-right" >
 									  
-									  <?php $__FOR_START_14535__=1;$__FOR_END_14535__=$pageCount+1;for($i=$__FOR_START_14535__;$i < $__FOR_END_14535__;$i+=1){ ?><li><a href="<?php echo U('Admin/Alter/alterProductView',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
+									  <?php $__FOR_START_9128__=1;$__FOR_END_9128__=$pageCount+1;for($i=$__FOR_START_9128__;$i < $__FOR_END_9128__;$i+=1){ ?><li><a href="<?php echo U('Admin/Alter/alterFameList',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
 									  </ul>
 									  </div>
 										<!-- /.table-responsive -->
@@ -1060,6 +1058,8 @@
 		<script language="JavaScript">
 		<!--
 		function transform(a){
+			
+			alert(a);
 			ThinkAjax.send('<?php echo U("Admin/Alter/updateProductView");?>','ajax=1&id='+a,complete,'result');
 		}
 		

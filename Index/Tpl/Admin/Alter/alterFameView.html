@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -367,7 +367,7 @@
 					</div><!-- #sidebar-shortcuts -->
 <ul class="nav nav-list">
 						<li class="active">
-							<a href="<?php echo U('Admin/Admin/admin');?>">
+							<a href="{:U('Admin/Admin/admin')}">
 								<i class="icon-dashboard"></i>
 								<span class="menu-text"> 控制台 </span>
 							</a>
@@ -478,21 +478,21 @@
 							</a>
 
 							<ul class="submenu">
-								<li class="active">
-									<a href="<?php echo U('Admin/Alter/alterProductView');?>">
+								<li>
+									<a href="{:U('Admin/Alter/alterProductView')}">
 										<i class="icon-double-angle-right"></i>
 										作品修改
 									</a>
 								</li>
 
 								<li>
-									<a href="<?php echo U('Admin/Alter/alterBlogList');?>">
+									<a href="{:U('Admin/Alter/alterBlogList')}">
 										<i class="icon-double-angle-right"></i>
 										博客修改
 									</a>
 								</li>
-								<li>
-									<a href="<?php echo U('Admin/Alter/alterFameList');?>">
+								<li class="active">
+									<a href="#">
 										<i class="icon-double-angle-right"></i>
 										Fame修改
 									</a>
@@ -735,22 +735,22 @@
 																<span class="lbl"></span>
 															</label>
 														</th>
-														<th>作品名称</th>
-														<th>简介</th>
-														<th class="hidden-480">发布日期</th>
+														<th>姓名</th>
+														<th>toast（简介）</th>
 
 														<th>
 															<i class="icon-time bigger-110 hidden-480"></i>
 															缩略图
 														</th>
-														<th class="hidden-480">链接</th>
+														<th class="hidden-480">链接（link）</th>
 
 														<th></th>
 													</tr>
 												</thead>
 
 												<tbody>
-													<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+													<volist name="list" id="vo">
+													<tr>
 														<td class="center">
 															<label>
 																<input type="checkbox" class="ace" />
@@ -759,15 +759,14 @@
 														</td>
 														
 														<td>
-															<input  type="hidden" id="ori_updateId" value="<?php echo ($vo["id"]); ?>"/>
-															<a href="#"><?php echo ($vo["name"]); ?></a>
+															<input  type="hidden" id="ori_updateId" value="{$vo.id}"/>
+															<a href="#">{$vo.name}</a>
 														</td>
-														<td><?php echo ($vo["introduce"]); ?></td>
-														<td class="hidden-480"><?php echo ($vo["birthday"]); ?></td>
-														<td><?php echo ($vo["img_src"]); ?></td>
+														<td>{$vo.toast}</td>
+														<td>{$vo.img_src}</td>
 
 														<td class="hidden-480">
-															<span class="label label-sm label-success"><a href=' <?php echo ($vo["download_src"]); ?> ' target=_blank/> <?php echo ($vo["download_src"]); ?> </a></span>
+															<span class="label label-sm label-success"><a href=' {$vo.link} ' target=_blank/> {$vo.link} </a></span>
 														</td>
 
 														<td>
@@ -776,11 +775,11 @@
 																	<i class="icon-ok bigger-120"></i>
 																</button>
 
-																<button class="btn btn-xs btn-info" onclick=transform("<?php echo ($vo["id"]); ?>") >
+																<button class="btn btn-xs btn-info" onclick=transform("{$vo.id}") >
 																	<i class="icon-edit bigger-120"></i>
 																</button>
 
-																<button class="btn btn-xs btn-danger" onclick=deleteProduct("<?php echo ($vo["id"]); ?>")>
+																<button class="btn btn-xs btn-danger" onclick=deleteProduct("{$vo.id}")>
 																	<i class="icon-trash bigger-120"></i>
 																</button>
 
@@ -823,14 +822,17 @@
 																</div>
 															</div>
 														</td>
-													</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+													</tr>
+													</volist>
 												</tbody>
 											</table>
 										</div>
 										<div>
 									  <ul class="pagination pagination-right" >
 									  
-									  <?php $__FOR_START_14535__=1;$__FOR_END_14535__=$pageCount+1;for($i=$__FOR_START_14535__;$i < $__FOR_END_14535__;$i+=1){ ?><li><a href="<?php echo U('Admin/Alter/alterProductView',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
+									  <for start="1" end="$pageCount+1"  >
+									  <li><a href="{:U('Admin/Alter/alterFameList',array('p' => $i))}">{$i}</a></li>
+									  </for>
 									  </ul>
 									  </div>
 										<!-- /.table-responsive -->
@@ -847,7 +849,7 @@
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
 
-								<form class="form-horizontal" role="form" action="<?php echo U('Admin/Admin/upload');?>" method="post" enctype="multipart/form-data">
+								<form class="form-horizontal" role="form" action="{:U('Admin/Admin/upload')}" method="post" enctype="multipart/form-data">
 									
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 作品名称 </label>
@@ -1060,7 +1062,8 @@
 		<script language="JavaScript">
 		<!--
 		function transform(a){
-			ThinkAjax.send('<?php echo U("Admin/Alter/updateProductView");?>','ajax=1&id='+a,complete,'result');
+			
+			ThinkAjax.send('{:U("Admin/Alter/updateProductView")}','ajax=1&id='+a,complete,'result');
 		}
 		
 		
@@ -1086,7 +1089,7 @@
 <script language="JavaScript">
 		<!--
 		function updatePro(){
-			ThinkAjax.send('<?php echo U("Admin/Alter/alterProduct");?>','ajax=1&name='+$('form-field-1').value+'&introduce='+$('form-field-2').value+'&birthday='+$('form-field-3').value+'&download_src='+$('form-field-4').value+'&id='+$('updateId').value,complete2,'result2');
+			ThinkAjax.send('{:U("Admin/Alter/alterProduct")}','ajax=1&name='+$('form-field-1').value+'&introduce='+$('form-field-2').value+'&birthday='+$('form-field-3').value+'&download_src='+$('form-field-4').value+'&id='+$('updateId').value,complete2,'result2');
 		}
 		
 		
@@ -1106,7 +1109,7 @@
 <script language="JavaScript">
 		<!--
 		function deleteProduct(a){
-			ThinkAjax.send('<?php echo U("Admin/Alter/deleteProduct");?>','id='+a,complete3,'result3');
+			ThinkAjax.send('{:U("Admin/Alter/deleteProduct")}','id='+a,complete3,'result3');
 		}
 		
 		function complete3(data,status){

@@ -65,7 +65,7 @@
   <div>
   <ul class="pagination pagination-right" >
   
-  <?php $__FOR_START_4110__=1;$__FOR_END_4110__=$pageCount+1;for($i=$__FOR_START_4110__;$i < $__FOR_END_4110__;$i+=1){ ?><li><a href="<?php echo U('Index/Index/blog',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
+  <?php $__FOR_START_837__=1;$__FOR_END_837__=$pageCount+1;for($i=$__FOR_START_837__;$i < $__FOR_END_837__;$i+=1){ ?><li><a href="<?php echo U('Index/Index/blog',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
   </ul>
   </div>
   

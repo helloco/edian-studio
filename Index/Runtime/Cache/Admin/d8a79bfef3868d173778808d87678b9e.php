@@ -51,6 +51,10 @@
 		<script src="__PUBLIC__/assets/js/html5shiv.js"></script>
 		<script src="__PUBLIC__/assets/js/respond.min.js"></script>
 		<![endif]-->
+		<script type="text/javascript" src='__PUBLIC__/Js/jquery_min.js'></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/lang/zh-cn/zh-cn.js"></script>
 	</head>
 
 	<body>
@@ -478,14 +482,14 @@
 							</a>
 
 							<ul class="submenu">
-								<li class="active">
+								<li>
 									<a href="<?php echo U('Admin/Alter/alterProductView');?>">
 										<i class="icon-double-angle-right"></i>
 										作品修改
 									</a>
 								</li>
 
-								<li>
+								<li class="active">
 									<a href="<?php echo U('Admin/Alter/alterBlogList');?>">
 										<i class="icon-double-angle-right"></i>
 										博客修改
@@ -735,15 +739,15 @@
 																<span class="lbl"></span>
 															</label>
 														</th>
-														<th>作品名称</th>
-														<th>简介</th>
+														<th>博客ID</th>
+														<th>博客标题</th>
 														<th class="hidden-480">发布日期</th>
 
 														<th>
 															<i class="icon-time bigger-110 hidden-480"></i>
 															缩略图
 														</th>
-														<th class="hidden-480">链接</th>
+														<th class="hidden-480">内容</th>
 
 														<th></th>
 													</tr>
@@ -760,14 +764,14 @@
 														
 														<td>
 															<input  type="hidden" id="ori_updateId" value="<?php echo ($vo["id"]); ?>"/>
-															<a href="#"><?php echo ($vo["name"]); ?></a>
+															<a href="#"><?php echo ($vo["id"]); ?></a>
 														</td>
-														<td><?php echo ($vo["introduce"]); ?></td>
-														<td class="hidden-480"><?php echo ($vo["birthday"]); ?></td>
+														<td><?php echo ($vo["title"]); ?></td>
+														<td class="hidden-480"><?php echo ($vo["time"]); ?></td>
 														<td><?php echo ($vo["img_src"]); ?></td>
 
 														<td class="hidden-480">
-															<span class="label label-sm label-success"><a href=' <?php echo ($vo["download_src"]); ?> ' target=_blank/> <?php echo ($vo["download_src"]); ?> </a></span>
+															<span class="label label-sm label-success"><a href=' <?php echo ($vo["download_src"]); ?> ' target=_blank/> 内容 </a></span>
 														</td>
 
 														<td>
@@ -780,7 +784,7 @@
 																	<i class="icon-edit bigger-120"></i>
 																</button>
 
-																<button class="btn btn-xs btn-danger" onclick=deleteProduct("<?php echo ($vo["id"]); ?>")>
+																<button class="btn btn-xs btn-danger" onclick=deleteBlog("<?php echo ($vo["id"]); ?>")>
 																	<i class="icon-trash bigger-120"></i>
 																</button>
 
@@ -830,7 +834,7 @@
 										<div>
 									  <ul class="pagination pagination-right" >
 									  
-									  <?php $__FOR_START_14535__=1;$__FOR_END_14535__=$pageCount+1;for($i=$__FOR_START_14535__;$i < $__FOR_END_14535__;$i+=1){ ?><li><a href="<?php echo U('Admin/Alter/alterProductView',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
+									  <?php $__FOR_START_8314__=1;$__FOR_END_8314__=$pageCount+1;for($i=$__FOR_START_8314__;$i < $__FOR_END_8314__;$i+=1){ ?><li><a href="<?php echo U('Admin/Alter/alterBlogList',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
 									  </ul>
 									  </div>
 										<!-- /.table-responsive -->
@@ -850,7 +854,7 @@
 								<form class="form-horizontal" role="form" action="<?php echo U('Admin/Admin/upload');?>" method="post" enctype="multipart/form-data">
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 作品名称 </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 博客ID </label>
 										
 										<div class="col-sm-9">
 											<input type="hidden" name="updateId" id="updateId"/>
@@ -859,7 +863,7 @@
 									</div>
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> 作品简介</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> 博客标题</label>
 
 										<div class="col-sm-9">
 											<input type="text" name="introduce" id="form-field-2" placeholder="作品简介" class="col-xs-10 col-sm-5">
@@ -875,7 +879,7 @@
 									</div>
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-4"> 所在地址 </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-4">正文 </label>
 
 										<div class="col-sm-9">
 											<input type="text" name="downloadSrc" id="form-field-4" placeholder="作品下载地址/网站连接" class="col-xs-10 col-sm-5">
@@ -887,44 +891,20 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> Images </label>
 										
-										<div class="col-sm-9">
-											<div class="col-sm-4">
-											<div class="widget-box">
-												<div class="widget-header">
-													<h4>Custom File Input</h4>
-														
-													<span class="widget-toolbar">
-														<a href="#" data-action="collapse">
-															<i class="icon-chevron-up"></i>
-														</a>
-
-														<a href="#" data-action="close">
-															<i class="icon-remove"></i>
-														</a>
-													</span>
-												</div>
-													
-												<div class="widget-body">
-													<div class="widget-main">
-														<input type="file" id="id-input-file-2"  name="id-input-file-2" />
-														<label>
-															<input type="checkbox" name="file-format" id="id-file-format" class="ace" />
-															<span class="lbl"> Allow only images</span>
-														<img alt="tupian" id='pro_img' >
-														</label>
-													</div>
-												</div>
-											</div>
-										</div>
-											
-											</div>
-									</div>
+									<!-- get uEditor-->
+									
+									<script id="editor" type="text/plain" style="width:1024px;height:300px;" name='content'></script>
+									<script type="text/javascript">
+										UE.getEditor('editor');
+									</script>
+								
+									<!-- end get uEditor-->
 									
 									
 
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">
-											<button class="btn btn-info" type="button" onclick="updatePro();">
+											<button class="btn btn-info" type="button" onclick="updateArticle();">
 												<i class="icon-ok bigger-110"></i>
 												Submit
 											</button>
@@ -1052,18 +1032,16 @@
 			
 		</script>
 		<script type="text/javascript">
-		function deleteProduct_test(a){
-			alert(a);
+		function kk(){
+			alert('测试');
 		}
 		
 		</script>
 		<script language="JavaScript">
 		<!--
 		function transform(a){
-			ThinkAjax.send('<?php echo U("Admin/Alter/updateProductView");?>','ajax=1&id='+a,complete,'result');
+			ThinkAjax.send('<?php echo U("Admin/Alter/updateArticleView");?>','ajax=1&id='+a,complete,'result');
 		}
-		
-		
 		
 		function complete(data,status){
 			if (status==1)
@@ -1071,12 +1049,13 @@
 			
 			var data = eval("("+data+")");
 			/*得到回调数据，开始赋值*/
+			
 			$('updateId').value = data[0].id;
-			$('form-field-1').value = data[0].name;
-			$('form-field-2').value = data[0].introduce;
-			$('form-field-3').value = data[0].birthday;
-			$('form-field-4').value = data[0].download_src;
-			$('pro_img').src = "__ROOT__/Public/Uploads/"+data[0].img_src;
+			$('form-field-1').value = data[0].id;
+			$('form-field-2').value = data[0].title;
+			$('form-field-3').value = data[0].time;
+			UE.getEditor('editor').setContent(data[0].content);
+			
 			$('list').innerHTML = '<span>修改id='+data[0].id+'的作品信息</span>';
 			}
 		}
@@ -1085,8 +1064,8 @@
 
 <script language="JavaScript">
 		<!--
-		function updatePro(){
-			ThinkAjax.send('<?php echo U("Admin/Alter/alterProduct");?>','ajax=1&name='+$('form-field-1').value+'&introduce='+$('form-field-2').value+'&birthday='+$('form-field-3').value+'&download_src='+$('form-field-4').value+'&id='+$('updateId').value,complete2,'result2');
+		function updateArticle(){
+			ThinkAjax.send('<?php echo U("Admin/Alter/alterArticle");?>','ajax=1&title='+$('form-field-2').value+'&id='+$('updateId').value+'&content='+UE.getEditor('editor').getContent(),complete2,'result2');
 		}
 		
 		
@@ -1105,13 +1084,13 @@
 <!-- 下面这段js是用于删除的 -->
 <script language="JavaScript">
 		<!--
-		function deleteProduct(a){
-			ThinkAjax.send('<?php echo U("Admin/Alter/deleteProduct");?>','id='+a,complete3,'result3');
+		function deleteBlog(a){
+			ThinkAjax.send('<?php echo U("Admin/Alter/deleteBlog");?>','id='+a,complete3,'result3');
 		}
 		
 		function complete3(data,status){
 			if (status==1){
-				alert("删除作品信息成功！");
+				alert("删除信息成功！");
 			}else{
 				alert("操作失败");
 			}

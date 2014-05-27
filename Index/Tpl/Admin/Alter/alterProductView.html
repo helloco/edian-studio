@@ -6,7 +6,7 @@
 		<meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
 		<meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+		
 		<!-- basic styles -->
 
 		<link href="__PUBLIC__/assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -367,7 +367,7 @@
 					</div><!-- #sidebar-shortcuts -->
 <ul class="nav nav-list">
 						<li class="active">
-							<a href="index.html">
+							<a href="{:U('Admin/Admin/admin')}">
 								<i class="icon-dashboard"></i>
 								<span class="menu-text"> 控制台 </span>
 							</a>
@@ -486,9 +486,15 @@
 								</li>
 
 								<li>
-									<a href="jqgrid.html">
+									<a href="{:U('Admin/Alter/alterBlogList')}">
 										<i class="icon-double-angle-right"></i>
 										博客修改
+									</a>
+								</li>
+								<li>
+									<a href="{:U('Admin/Alter/alterFameList')}">
+										<i class="icon-double-angle-right"></i>
+										Fame修改
 									</a>
 								</li>
 							</ul>
@@ -709,6 +715,7 @@
 									<i class="icon-double-angle-right"></i>
 									Static &amp; Dynamic Tables
 								</small>
+								<div id='result3'></div>
 							</h1>
 						</div><!-- /.page-header -->
 
@@ -774,7 +781,7 @@
 																	<i class="icon-edit bigger-120"></i>
 																</button>
 
-																<button class="btn btn-xs btn-danger">
+																<button class="btn btn-xs btn-danger" onclick=deleteProduct("{$vo.id}")>
 																	<i class="icon-trash bigger-120"></i>
 																</button>
 
@@ -927,7 +934,7 @@
 											</button>
 
 											&nbsp; &nbsp; &nbsp;
-											<h2><div id='result2'></div></h2>
+											<h3><div id='result2' ></div></h3>
 										</div>
 									</div>
 								</div>
@@ -993,7 +1000,6 @@
  window.jQuery || document.write("<script src='__PUBLIC__/assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
 </script>
 <![endif]-->
-
 		<script type="text/javascript">
 			if("ontouchend" in document) document.write("<script src='__PUBLIC__/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>
@@ -1050,8 +1056,8 @@
 			
 		</script>
 		<script type="text/javascript">
-		function kk(){
-			alert('测试');
+		function deleteProduct_test(a){
+			alert(a);
 		}
 		
 		</script>
@@ -1092,7 +1098,7 @@
 		function complete2(data,status){
 			if (status==1){
 			
-			var data = eval("("+data+")");
+			//var data = eval("("+data+")");
 			//alert('修改成功！');
 			}else{
 				//alert('您没有选择要修改的选项！');
@@ -1100,10 +1106,27 @@
 		}
 		//-->
 </script>
-<load href="__PUBLIC__/Js/Base.js" />
-<load href="__PUBLIC__/Js/prototype.js" />
-<load href="__PUBLIC__/Js/mootools.js" />
-<load href="__PUBLIC__/Js/Ajax/ThinkAjax.js" />
+<!-- 下面这段js是用于删除的 -->
+<script language="JavaScript">
+		<!--
+		function deleteProduct(a){
+			ThinkAjax.send('{:U("Admin/Alter/deleteProduct")}','id='+a,complete3,'result3');
+		}
+		
+		function complete3(data,status){
+			if (status==1){
+				alert("删除作品信息成功！");
+			}else{
+				alert("操作失败");
+			}
+		}
+		//-->
+</script>
+<script type="text/javascript" src="__PUBLIC__/Js/Base.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/prototype.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/mootools.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/Ajax/ThinkAjax.js"></script>
+
 	<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 </body>
 </html>

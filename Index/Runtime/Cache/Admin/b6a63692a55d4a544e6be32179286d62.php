@@ -359,7 +359,7 @@
 
 					<ul class="nav nav-list">
 						<li class="active">
-							<a href="index.html">
+							<a href="<?php echo U('Admin/Admin/admin');?>">
 								<i class="icon-dashboard"></i>
 								<span class="menu-text"> 控制台 </span>
 							</a>
@@ -478,9 +478,15 @@
 								</li>
 
 								<li>
-									<a href="jqgrid.html">
+									<a href="<?php echo U('Admin/Alter/alterBlogList');?>">
 										<i class="icon-double-angle-right"></i>
 										博客修改
+									</a>
+								</li>
+								<li>
+									<a href="<?php echo U('Admin/Alter/alterFameView');?>">
+										<i class="icon-double-angle-right"></i>
+										Fame修改
 									</a>
 								</li>
 							</ul>
@@ -674,7 +680,7 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">首页</a>
+								<a href="<?php echo U('Admin/Admin/admin');?>">首页</a>
 							</li>
 							<li class="active">控制台</li>
 						</ul><!-- .breadcrumb -->
