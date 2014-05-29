@@ -718,14 +718,31 @@
 								<!-- PAGE CONTENT BEGINS -->
 
 								<form class="form-horizontal" role="form" action="{:U('Admin/Admin/uploadFame')}" method="post" enctype="multipart/form-data">
+									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> toast </label>
-
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 姓名</label>
+										
 										<div class="col-sm-9">
-											<input type="text" name="fameName" id="form-field-1" placeholder="toast" class="col-xs-10 col-sm-5">
+											<input type="text" name="name" id="form-field-1" placeholder="姓名" class="col-xs-10 col-sm-5">
 										</div>
 									</div>
 									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> toast（简介）</label>
+
+										<div class="col-sm-9">
+											<input type="text" name="fameName" id="form-field-2" placeholder="作品简介" class="col-xs-10 col-sm-5">
+										</div>
+									</div>
+									
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-4"> Link（对应博客） </label>
+
+										<div class="col-sm-9">
+											<input type="text" name="link" id="form-field-4" placeholder="作品下载地址/网站连接" class="col-xs-10 col-sm-5">
+										</div>
+									</div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Images </label>
 

@@ -484,7 +484,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="<?php echo U('Admin/Alter/alterFameView');?>">
+									<a href="<?php echo U('Admin/Alter/alterFameList');?>">
 										<i class="icon-double-angle-right"></i>
 										Fame修改
 									</a>
@@ -522,19 +522,14 @@
 									</a>
 								</li>
 
-								<li>
-									<a href="dropzone.html">
-										<i class="icon-double-angle-right"></i>
-										文件上传
-									</a>
-								</li>
+								
 							</ul>
 						</li>
 
 						<li>
-							<a href="widgets.html">
+							<a href="<?php echo U('Admin/Account/accountSettingView');?>">
 								<i class="icon-list-alt"></i>
-								<span class="menu-text"> 插件 </span>
+								<span class="menu-text"> 账户设置 </span>
 							</a>
 						</li>
 

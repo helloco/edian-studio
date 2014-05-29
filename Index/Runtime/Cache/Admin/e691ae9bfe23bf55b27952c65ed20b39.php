@@ -492,7 +492,7 @@
 									</a>
 								</li>
 								<li class="active">
-									<a href="#">
+									<a href="<?php echo U('Admin/Alter/alterFameList');?>">
 										<i class="icon-double-angle-right"></i>
 										Fame修改
 									</a>
@@ -778,7 +778,7 @@
 																	<i class="icon-edit bigger-120"></i>
 																</button>
 
-																<button class="btn btn-xs btn-danger" onclick=deleteProduct("<?php echo ($vo["id"]); ?>")>
+																<button class="btn btn-xs btn-danger" onclick=deleteFame("<?php echo ($vo["id"]); ?>")>
 																	<i class="icon-trash bigger-120"></i>
 																</button>
 
@@ -828,7 +828,7 @@
 										<div>
 									  <ul class="pagination pagination-right" >
 									  
-									  <?php $__FOR_START_9128__=1;$__FOR_END_9128__=$pageCount+1;for($i=$__FOR_START_9128__;$i < $__FOR_END_9128__;$i+=1){ ?><li><a href="<?php echo U('Admin/Alter/alterFameList',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
+									  <?php $__FOR_START_22409__=1;$__FOR_END_22409__=$pageCount+1;for($i=$__FOR_START_22409__;$i < $__FOR_END_22409__;$i+=1){ ?><li><a href="<?php echo U('Admin/Alter/alterFameList',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
 									  </ul>
 									  </div>
 										<!-- /.table-responsive -->
@@ -848,35 +848,28 @@
 								<form class="form-horizontal" role="form" action="<?php echo U('Admin/Admin/upload');?>" method="post" enctype="multipart/form-data">
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 作品名称 </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 姓名</label>
 										
 										<div class="col-sm-9">
 											<input type="hidden" name="updateId" id="updateId"/>
-											<input type="text" name="productName" id="form-field-1" placeholder="作品名称" class="col-xs-10 col-sm-5">
+											<input type="text" name="productName" id="form-field-1" placeholder="姓名" class="col-xs-10 col-sm-5">
 										</div>
 									</div>
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> 作品简介</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> toast（简介）</label>
 
 										<div class="col-sm-9">
-											<input type="text" name="introduce" id="form-field-2" placeholder="作品简介" class="col-xs-10 col-sm-5">
+											<input type="text" name="introduce" id="form-field-2" placeholder="简介" class="col-xs-10 col-sm-5">
 										</div>
 									</div>
 									
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-3"> 发布日期 </label>
-
-										<div class="col-sm-9">
-											<input type="text" name="birthday" id="form-field-3" placeholder="作品发布日期 " class="col-xs-10 col-sm-5">
-										</div>
-									</div>
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-4"> 所在地址 </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-4"> Link（对应博客） </label>
 
 										<div class="col-sm-9">
-											<input type="text" name="downloadSrc" id="form-field-4" placeholder="作品下载地址/网站连接" class="col-xs-10 col-sm-5">
+											<input type="text" name="downloadSrc" id="form-field-4" placeholder="Link（对应博客）" class="col-xs-10 col-sm-5">
 										</div>
 									</div>
 									
@@ -1058,9 +1051,7 @@
 		<script language="JavaScript">
 		<!--
 		function transform(a){
-			
-			alert(a);
-			ThinkAjax.send('<?php echo U("Admin/Alter/updateProductView");?>','ajax=1&id='+a,complete,'result');
+			ThinkAjax.send('<?php echo U("Admin/Alter/alterFameView");?>','ajax=1&id='+a,complete,'result');
 		}
 		
 		
@@ -1073,10 +1064,9 @@
 			/*得到回调数据，开始赋值*/
 			$('updateId').value = data[0].id;
 			$('form-field-1').value = data[0].name;
-			$('form-field-2').value = data[0].introduce;
-			$('form-field-3').value = data[0].birthday;
-			$('form-field-4').value = data[0].download_src;
-			$('pro_img').src = "__ROOT__/Public/Uploads/"+data[0].img_src;
+			$('form-field-2').value = data[0].toast;
+			$('form-field-4').value = data[0].link;
+			$('pro_img').src = "__ROOT__/Public/UploadsFame/"+data[0].img_src;
 			$('list').innerHTML = '<span>修改id='+data[0].id+'的作品信息</span>';
 			}
 		}
@@ -1086,7 +1076,7 @@
 <script language="JavaScript">
 		<!--
 		function updatePro(){
-			ThinkAjax.send('<?php echo U("Admin/Alter/alterProduct");?>','ajax=1&name='+$('form-field-1').value+'&introduce='+$('form-field-2').value+'&birthday='+$('form-field-3').value+'&download_src='+$('form-field-4').value+'&id='+$('updateId').value,complete2,'result2');
+			ThinkAjax.send('<?php echo U("Admin/Alter/alterFame");?>','ajax=1&name='+$('form-field-1').value+'&toast='+$('form-field-2').value+'&link='+$('form-field-4').value+'&id='+$('updateId').value,complete2,'result2');
 		}
 		
 		
@@ -1105,13 +1095,14 @@
 <!-- 下面这段js是用于删除的 -->
 <script language="JavaScript">
 		<!--
-		function deleteProduct(a){
-			ThinkAjax.send('<?php echo U("Admin/Alter/deleteProduct");?>','id='+a,complete3,'result3');
+		function deleteFame(a){
+			alert(a);
+			ThinkAjax.send('<?php echo U("Admin/Alter/deleteFame");?>','id='+a,complete3,'result3');
 		}
 		
 		function complete3(data,status){
 			if (status==1){
-				alert("删除作品信息成功！");
+				alert("删除成功！!");
 			}else{
 				alert("操作失败");
 			}

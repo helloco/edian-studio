@@ -21,6 +21,7 @@ class AdminAction extends CommonAction{
 	public function addBlog(){
 	
 		$Article = D('Article');
+		
 		if ($Article->create()) {
 			$res = $Article->add();
 			if ($res) {
@@ -28,6 +29,8 @@ class AdminAction extends CommonAction{
 			}else {
 				$this->error('写入错误');
 			}
+		}else{
+			$this->error("操作失败");
 		}
 	}
 	public function addProductView(){
@@ -87,6 +90,8 @@ class AdminAction extends CommonAction{
 		//接受其他参数
 		
 		$data = array(
+				'name' => I('link','','htmlspecialchars'),
+				'link' => I('link','','htmlspecialchars'),
 				'img_src' => $info[0]['savename'],
 				'toast' => I('fameName','','htmlspecialchars'),
 		);

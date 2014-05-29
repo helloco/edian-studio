@@ -17,8 +17,10 @@ class IndexAction extends Action{
 		$res = $Admin->where("admin_name='%s' and admin_passwd='%s'",$data)->select();
 		if ($res) {
 			session_start();
-			session('adminName',$data["adminName"]);
-			session('adminPwd',$data["adminPwd"]);
+			session('adminName',$res[0]['admin_name']);
+			session('adminPwd',$res[0]['admin_passwd']);
+			session('type',$res[0]['type']);
+			session('id',$res[0]['id']);
 			//$this->assign('adminName',$_SESSION['adminName']);
 			//$this->display('Admin/admin');
 			$this->redirect('/Admin/Admin/admin');
