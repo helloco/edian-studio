@@ -366,9 +366,9 @@
 						</li>
 
 						<li>
-							<a href="typography.html">
+							<a href="<?php echo U('Admin/Account/userManageView');?>">
 								<i class="icon-text-width"></i>
-								<span class="menu-text"> 文字排版 </span>
+								<span class="menu-text"> 用户管理 </span>
 							</a>
 						</li>
 

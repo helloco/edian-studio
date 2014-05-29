@@ -759,9 +759,9 @@
 														<td>
 															<input  type="hidden" id="admin_id" value=<?php echo ($res[0]['id']); ?> />
 															<input  type="hidden" id="admin_name" value=<?php echo ($res[0]['admin_name']); ?> />
-															<a href="#" id="admin_name"><?php echo ($res[0]['admin_name']); ?></a>
+															<label id='ad2'><a href="#" id="admin_name"><?php echo ($res[0]['admin_name']); ?></a></label>
 														</td>
-														<td><span class="label label-sm label-success"><a href='#' /> <?php echo ($res[0]['admin_passwd']); ?> </a></span>
+														<td><span class="label label-sm label-success"><a href='#' /> <label id='ad3'><?php echo ($res[0]['admin_passwd']); ?> </label></a></span>
 														</td>
 														
 														<td><?php echo ($res[0]['type']); ?></td>
@@ -862,7 +862,7 @@
 
 																	<div class="col-xs-12 col-sm-9">
 																		<div class="clearfix">
-																			<input type="password" name="password" id="password" class="col-xs-12 col-sm-4 valid">
+																			<input type="password" name="password" id="password" class="col-xs-12 col-sm-4 valid" placeholder="请输入新密码">
 																		</div>
 																	</div>
 																</div>
@@ -874,7 +874,7 @@
 
 																	<div class="col-xs-12 col-sm-9">
 																		<div class="clearfix">
-																			<input type="password" name="password2" id="password2" class="col-xs-12 col-sm-4">
+																			<input type="password" name="password2" id="password2" class="col-xs-12 col-sm-4" placeholder="请重复密码">
 																		</div><div for="password2" class="help-block" style="display:none;">Please enter at least 5 characters.</div>
 																	</div>
 																</div>
@@ -1022,8 +1022,9 @@
 		<script language="JavaScript">
 		<!--
 		function transform(){
-			document.getElementById("update_admin_name").value=document.getElementById("admin_name").value;
-			
+			document.getElementById("update_admin_name").value = document.getElementById("admin_name").value;
+			document.getElementById("password").value = "";
+			document.getElementById("password2").value = "";
 		}
 		
 		//-->
@@ -1039,20 +1040,24 @@
 		
 		function complete2(data,status){
 			if (status==1){
+			var data = eval("("+data+")");
+			document.getElementById("ad2").innerHTML = data['admin_name'];
+			document.getElementById("ad3").innerHTML = data['admin_passwd'];
 			
-			//var data = eval("("+data+")");
-			//alert('修改成功！');
-			}else{
-				//alert('您没有选择要修改的选项！');
+			document.getElementById("update_admin_name").value = "";
+			document.getElementById("password").value = "";
+			document.getElementById("password2").value = "";
+			}else if(status==0){
+				alert('操作错误');
+			}else if(status==2){
+				alert('用户名已经被占用');
 			}
 		}
 		//-->
-</script>
-<script language="JavaScript">
-		<!--
 		
-		//-->
 </script>
+
+
 <script type="text/javascript" src="__PUBLIC__/Js/Base.js"></script>
 <script type="text/javascript" src="__PUBLIC__/Js/prototype.js"></script>
 <script type="text/javascript" src="__PUBLIC__/Js/mootools.js"></script>
