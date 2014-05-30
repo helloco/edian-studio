@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>异点工作室 | Edian Studio</title>
-		<meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
-		<meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
+		<meta name="keywords" content="异点工作室 | Edian Studio" />
+		<meta name="description" content="异点工作室 | Edian Studio" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		
 		<!-- basic styles -->
@@ -64,7 +64,7 @@
 					<a href="#" class="navbar-brand">
 						<small>
 							<i class="icon-leaf"></i>
-							Ace Admin
+							异点工作室 | Edian Studio
 						</small>
 					</a><!-- /.brand -->
 				</div><!-- /.navbar-header -->
@@ -366,108 +366,13 @@
 						</div>
 					</div><!-- #sidebar-shortcuts -->
 <ul class="nav nav-list">
-						<li class="active">
+						<li>
 							<a href="<?php echo U('Admin/Admin/admin');?>">
 								<i class="icon-dashboard"></i>
 								<span class="menu-text"> 控制台 </span>
 							</a>
 						</li>
 
-						<li>
-							<a href="typography.html">
-								<i class="icon-text-width"></i>
-								<span class="menu-text"> 文字排版 </span>
-							</a>
-						</li>
-
-						<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-desktop"></i>
-								<span class="menu-text"> UI 组件 </span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-
-							<ul class="submenu">
-								<li>
-									<a href="elements.html">
-										<i class="icon-double-angle-right"></i>
-										组件
-									</a>
-								</li>
-
-								<li>
-									<a href="buttons.html">
-										<i class="icon-double-angle-right"></i>
-										按钮 &amp; 图表
-									</a>
-								</li>
-
-								<li>
-									<a href="treeview.html">
-										<i class="icon-double-angle-right"></i>
-										树菜单
-									</a>
-								</li>
-
-								<li>
-									<a href="jquery-ui.html">
-										<i class="icon-double-angle-right"></i>
-										jQuery UI
-									</a>
-								</li>
-
-								<li>
-									<a href="nestable-list.html">
-										<i class="icon-double-angle-right"></i>
-										可拖拽列表
-									</a>
-								</li>
-
-								<li>
-									<a href="#" class="dropdown-toggle">
-										<i class="icon-double-angle-right"></i>
-
-										三级菜单
-										<b class="arrow icon-angle-down"></b>
-									</a>
-
-									<ul class="submenu">
-										<li>
-											<a href="#">
-												<i class="icon-leaf"></i>
-												第一级
-											</a>
-										</li>
-
-										<li>
-											<a href="#" class="dropdown-toggle">
-												<i class="icon-pencil"></i>
-
-												第四级
-												<b class="arrow icon-angle-down"></b>
-											</a>
-
-											<ul class="submenu">
-												<li>
-													<a href="#">
-														<i class="icon-plus"></i>
-														添加产品
-													</a>
-												</li>
-
-												<li>
-													<a href="#">
-														<i class="icon-eye-open"></i>
-														查看商品
-													</a>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
 
 						<li class="active open">
 							<a href="#" class="dropdown-toggle">
@@ -491,7 +396,7 @@
 										博客修改
 									</a>
 								</li>
-								<li class="active">
+								<li  class="active">
 									<a href="<?php echo U('Admin/Alter/alterFameList');?>">
 										<i class="icon-double-angle-right"></i>
 										Fame修改
@@ -499,177 +404,55 @@
 								</li>
 							</ul>
 						</li>
-
 						<li>
-							<a href="#" class="dropdown-toggle">
+							<a href="<?php echo U('Admin/Admin/addProductView');?>" class="dropdown-toggle">
 								<i class="icon-edit"></i>
-								<span class="menu-text"> 表单 </span>
+								<span class="menu-text"> 新增</span>
 
 								<b class="arrow icon-angle-down"></b>
 							</a>
 
 							<ul class="submenu">
 								<li>
-									<a href="form-elements.html">
+									<a href="<?php echo U('Admin/Admin/addProductView');?>">
 										<i class="icon-double-angle-right"></i>
-										表单组件
+										作品管理
 									</a>
 								</li>
 
 								<li>
-									<a href="form-wizard.html">
+									<a href="<?php echo U('Admin/Admin/addBlog');?>">
 										<i class="icon-double-angle-right"></i>
-										向导提示 &amp; 验证
+										博客管理
 									</a>
 								</li>
 
 								<li>
-									<a href="wysiwyg.html">
+									<a href="<?php echo U('Admin/Admin/addFameView');?>">
 										<i class="icon-double-angle-right"></i>
-										编辑器
+										fameHall管理
 									</a>
 								</li>
 
-								<li>
-									<a href="dropzone.html">
-										<i class="icon-double-angle-right"></i>
-										文件上传
-									</a>
-								</li>
+								
 							</ul>
 						</li>
 
 						<li>
-							<a href="widgets.html">
+							<a href="<?php echo U('Admin/Account/accountSettingView');?>">
 								<i class="icon-list-alt"></i>
-								<span class="menu-text"> 插件 </span>
+								<span class="menu-text"> 个人配置 </span>
 							</a>
 						</li>
 
 						<li>
-							<a href="calendar.html">
-								<i class="icon-calendar"></i>
-
-								<span class="menu-text">
-									日历
-									<span class="badge badge-transparent tooltip-error" title="2&nbsp;Important&nbsp;Events">
-										<i class="icon-warning-sign red bigger-130"></i>
-									</span>
-								</span>
+							<a href="<?php echo U('Admin/Account/userManageView');?>">
+								<i class="icon-text-width"></i>
+								<span class="menu-text"> 管理员管理 </span>
 							</a>
 						</li>
-
-						<li>
-							<a href="gallery.html">
-								<i class="icon-picture"></i>
-								<span class="menu-text"> 相册 </span>
-							</a>
-						</li>
-
-						<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-tag"></i>
-								<span class="menu-text"> 更多页面 </span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-
-							<ul class="submenu">
-								<li>
-									<a href="profile.html">
-										<i class="icon-double-angle-right"></i>
-										用户信息
-									</a>
-								</li>
-
-								<li>
-									<a href="inbox.html">
-										<i class="icon-double-angle-right"></i>
-										收件箱
-									</a>
-								</li>
-
-								<li>
-									<a href="pricing.html">
-										<i class="icon-double-angle-right"></i>
-										售价单
-									</a>
-								</li>
-
-								<li>
-									<a href="invoice.html">
-										<i class="icon-double-angle-right"></i>
-										购物车
-									</a>
-								</li>
-
-								<li>
-									<a href="timeline.html">
-										<i class="icon-double-angle-right"></i>
-										时间轴
-									</a>
-								</li>
-
-								<li>
-									<a href="login.html">
-										<i class="icon-double-angle-right"></i>
-										登录 &amp; 注册
-									</a>
-								</li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-file-alt"></i>
-
-								<span class="menu-text">
-									其他页面
-									<span class="badge badge-primary ">5</span>
-								</span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-
-							<ul class="submenu">
-								<li>
-									<a href="faq.html">
-										<i class="icon-double-angle-right"></i>
-										帮助
-									</a>
-								</li>
-
-								<li>
-									<a href="error-404.html">
-										<i class="icon-double-angle-right"></i>
-										404错误页面
-									</a>
-								</li>
-
-								<li>
-									<a href="error-500.html">
-										<i class="icon-double-angle-right"></i>
-										500错误页面
-									</a>
-								</li>
-
-								<li>
-									<a href="grid.html">
-										<i class="icon-double-angle-right"></i>
-										网格
-									</a>
-								</li>
-
-								<li>
-									<a href="blank.html">
-										<i class="icon-double-angle-right"></i>
-										空白页面
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul><!-- /.nav-list -->
-
+</ul>
+<!--ul end-->
 					<div class="sidebar-collapse" id="sidebar-collapse">
 						<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
 					</div>
@@ -828,7 +611,7 @@
 										<div>
 									  <ul class="pagination pagination-right" >
 									  
-									  <?php $__FOR_START_22409__=1;$__FOR_END_22409__=$pageCount+1;for($i=$__FOR_START_22409__;$i < $__FOR_END_22409__;$i+=1){ ?><li><a href="<?php echo U('Admin/Alter/alterFameList',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
+									  <?php $__FOR_START_1636__=1;$__FOR_END_1636__=$pageCount+1;for($i=$__FOR_START_1636__;$i < $__FOR_END_1636__;$i+=1){ ?><li><a href="<?php echo U('Admin/Alter/alterFameList',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
 									  </ul>
 									  </div>
 										<!-- /.table-responsive -->
