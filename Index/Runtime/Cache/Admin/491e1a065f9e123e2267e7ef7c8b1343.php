@@ -272,7 +272,7 @@
 								</li>
 
 								<li>
-									<a href="inbox.html">
+									<a href="#">
 										See all messages
 										<i class="icon-arrow-right"></i>
 									</a>
@@ -295,23 +295,14 @@
 								<li>
 									<a href="<?php echo U('Admin/Account/accountSettingView');?>">
 										<i class="icon-cog"></i>
-										Settings
+										设置
 									</a>
 								</li>
 
 								<li>
-									<a href="#">
-										<i class="icon-user"></i>
-										Profile
-									</a>
-								</li>
-
-								<li class="divider"></li>
-
-								<li>
-									<a href="#">
+									<a href="<?php echo U('Admin/Account/logout');?>">
 										<i class="icon-off"></i>
-										Logout
+										退出
 									</a>
 								</li>
 							</ul>

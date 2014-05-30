@@ -42,14 +42,25 @@
 </div>
 
 <div class="container"  >
-<div id="zh_join">
+<div id="myCarousel" class="carousel slide">
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item">…</div>
+    <div class="item">…</div>
+    <div class="item">…</div>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+<!-- <div id="zh_join">
 <h3 class="page-header">Join  Us</h3>
-<div class=" alert alert-info alert-success">
+ <div class=" alert alert-info alert-success">
 <a href="#" class="close" data-dismiss="alert" onClick="hide_join()">×</a>
 <p><h4>改变需要一次机遇。我们渴望对技术热爱的小伙伴。简历请发送至hr@hgdonline.net，我们将尽快回复您！(加载之后3秒消失)</h4></p></div>
-</div>
+</div>-->
 
-<h1 class="page-header">异点作品</h1>
+<!-- <h1 class="page-header">异点作品</h1> -->
 <ul class="thumbnails">
 <li class="col-lg-3 point"><a class="thumbnail" href="#"><img src="image/apple.png"/></a></li>
 <li class="col-lg-3 point"><a class="thumbnail" href="#"><img src="image/android.png"/></a></li>
@@ -61,7 +72,7 @@
 <li class="col-lg-3 point"><a class="thumbnail" href="#"><img src="image/alarm.png"/></a></li>
 <li class="col-lg-3 point"><a class="thumbnail" href="#"><img src="image/appstore.png"/></a></li>
 </ul>
-</div>
+
 
 
 </div>
