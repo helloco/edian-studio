@@ -607,7 +607,7 @@
 										<div>
 									  <ul class="pagination pagination-right" >
 									  
-									  <?php $__FOR_START_953__=1;$__FOR_END_953__=$pageCount+1;for($i=$__FOR_START_953__;$i < $__FOR_END_953__;$i+=1){ ?><li><a href="<?php echo U('Admin/Alter/alterBlogList',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
+									  <?php $__FOR_START_31035__=1;$__FOR_END_31035__=$pageCount+1;for($i=$__FOR_START_31035__;$i < $__FOR_END_31035__;$i+=1){ ?><li><a href="<?php echo U('Admin/Alter/alterBlogList',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
 									  </ul>
 									  </div>
 										<!-- /.table-responsive -->
@@ -631,7 +631,7 @@
 										
 										<div class="col-sm-9">
 											<input type="hidden" name="updateId" id="updateId"/>
-											<input type="text" name="productName" id="form-field-1" placeholder="作品名称" class="col-xs-10 col-sm-5">
+											<input type="text" name="productName" id="form-field-1" placeholder="博客ID不可以更改" class="col-xs-10 col-sm-5" disabled="disabled">
 										</div>
 									</div>
 									

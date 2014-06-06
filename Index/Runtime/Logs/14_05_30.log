@@ -11935,3 +11935,11 @@ INFO: [ app_begin ] --START--
 INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000756s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.000861s ]
 
+[ 2014-05-30T21:44:43+08:00 ] 0.0.0.0 /zendStudio/edian/index.php/Admin/Index/verify.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001441s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001578s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000990s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001120s ]
+

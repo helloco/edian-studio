@@ -406,7 +406,7 @@
 								</li>
 
 								<li>
-									<a href="<?php echo U('Admin/Admin/addBlog');?>">
+									<a href="<?php echo U('Admin/Admin/addBlogView');?>">
 										<i class="icon-double-angle-right"></i>
 										博客管理
 									</a>

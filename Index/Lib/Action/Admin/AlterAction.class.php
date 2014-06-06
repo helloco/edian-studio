@@ -13,7 +13,7 @@ class AlterAction extends CommonAction{
 		$Data = M('Product');
 		import('ORG.Util.Page');
 		$count = $Data->where($map)->count();
-		$pageSize  = 2;
+		$pageSize  = 8;
 		$pageCount = ceil($count/$pageSize);
 		$Page  = new Page($count,$pageSize);
 		$nowPage = isset($_GET['p'])?$_GET['p']:1;
@@ -64,7 +64,7 @@ class AlterAction extends CommonAction{
 		$Data = M('Article');
 		import('ORG.Util.Page');
 		$count = $Data->where($map)->count();
-		$pageSize  = 2;
+		$pageSize  = 8;
 		$pageCount = ceil($count/$pageSize);
 		$Page  = new Page($count,$pageSize);
 		$nowPage = isset($_GET['p'])?$_GET['p']:1;
@@ -87,7 +87,7 @@ class AlterAction extends CommonAction{
 		$Data = M($model);
 		import('ORG.Util.Page');
 		$count = $Data->where($map)->count();
-		$pageSize  = 2;
+		$pageSize  = 8;
 		$pageCount = ceil($count/$pageSize);
 		$Page  = new Page($count,$pageSize);
 		$nowPage = isset($_GET['p'])?$_GET['p']:1;

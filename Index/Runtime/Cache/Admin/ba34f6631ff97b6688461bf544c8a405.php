@@ -431,14 +431,14 @@
 							</ul>
 						</li>
 
-						<li class="active">
+						<li>
 							<a href="<?php echo U('Admin/Account/accountSettingView');?>">
 								<i class="icon-list-alt"></i>
 								<span class="menu-text"> 个人配置 </span>
 							</a>
 						</li>
 
-						<li>
+						<li class="active">
 							<a href="<?php echo U('Admin/Account/userManageView');?>">
 								<i class="icon-text-width"></i>
 								<span class="menu-text"> 管理员管理 </span>
@@ -612,7 +612,7 @@
 								<div class="row">
 									<div class="col-xs-12">
 										<h3 class="header smaller lighter blue" id="list">1.修改密码</h3>
-										
+										<h3><div id='result2' ></div></h3>
 
 										<div class="row">
 							<div class="col-xs-12">
@@ -658,9 +658,8 @@
 												<i class="icon-ok bigger-110"></i>
 												修改密码
 											</button>
-
-											&nbsp; &nbsp; &nbsp;
-											<h3><div id='result2' ></div></h3>
+												
+											
 										</div>
 									</div>
 								</div>
@@ -673,8 +672,7 @@
 								<div class="row">
 									<div class="col-xs-12">
 										<h3 class="header smaller lighter blue" id="list2">2.增加新用户</h3>
-										
-
+										<h3><div id='result4' ></div></h3>
 										<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
@@ -742,9 +740,7 @@
 												<i class="icon-ok bigger-110"></i>
 												确认新增用户	
 											</button>
-
-											&nbsp; &nbsp; &nbsp;
-											<h3><div id='result4' ></div></h3>
+											
 										</div>
 									</div>
 								</div>

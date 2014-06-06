@@ -26,14 +26,15 @@
           <ul class="nav navbar-nav">
             <li><a href="<?php echo U('Index/Index/index');?>">HOME</a></li>
             <li   class="active"><a href="<?php echo U('Index/Index/blog');?>">BLOG</a></li>
+            <li><a href="<?php echo U('Index/Index/product');?>">OUR WORK</a></li>
 			<li><a href="<?php echo U('Index/Index/fame');?>">FAME HALL</a></li>
             <li><a href="<?php echo U('Index/Index/about');?>">ABOUT US</a></li>
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./">SKIP</a></li>
-            <li><a href="">HIGH</a></li>
-            <li><a href="">GO</a></li>
+            <li><a href="#">SKIP</a></li>
+            <li><a href="#">HIGH</a></li>
+            <li><a href="#">GO</a></li>
           </ul>  
         </div><!--/.nav-collapse -->
       </div>
@@ -46,10 +47,10 @@
   </ul>
 
 <div class="page-header">
-        <h1><?php echo ($data[0]['id']); ?></h1>
+        <h1><?php echo ($data[0]["title"]); ?></h1>
       </div>
       <div class="well">
-        <p><center><h1><?php echo ($data[0]["title"]); ?></h1></center><?php echo ($data[0]["content"]); ?></p>
+        <p><?php echo ($data[0]["content"]); ?></p>
       </div>
 
   

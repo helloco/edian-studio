@@ -19,18 +19,22 @@ class AdminAction extends CommonAction{
 		$this->display('addBlogView');
 	}
 	public function addBlog(){
-	
+		header("Content-type: text/html; charset=utf-8");
 		$Article = D('Article');
-		
+		$data = array(
+				'title' => I('title','','htmlspecialchars'),
+				'time' => date('Y-m-d H:i:s'),
+				'content' => I('content','',''),
+		);
 		if ($Article->create()) {
-			$res = $Article->add();
+			$res = $Article->add($data);
 			if ($res) {
 				$this->success("操作成功!");
 			}else {
 				$this->error('写入错误');
 			}
 		}else{
-			$this->error("操作失败");
+			$this->error("不能为空！");
 		}
 	}
 	public function addProductView(){

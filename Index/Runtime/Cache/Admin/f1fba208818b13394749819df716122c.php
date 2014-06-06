@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>异点工作室 | Edian Studio</title>
-		<meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
-		<meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
+		<meta name="keywords" content="异点工作室 | Edian Studio" />
+		<meta name="description" content="异点工作室 | Edian Studio" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!-- basic styles -->
@@ -69,7 +69,7 @@
 					<a href="#" class="navbar-brand">
 						<small>
 							<i class="icon-leaf"></i>
-							Ace Admin
+							异点工作室
 						</small>
 					</a><!-- /.brand -->
 				</div><!-- /.navbar-header -->
@@ -277,7 +277,7 @@
 								</li>
 
 								<li>
-									<a href="inbox.html">
+									<a href="#">
 										See all messages
 										<i class="icon-arrow-right"></i>
 									</a>
@@ -290,7 +290,7 @@
 								<img class="nav-user-photo" src="__PUBLIC__/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									Jason
+									<?php echo ($_SESSION["adminName"]); ?>
 								</span>
 
 								<i class="icon-caret-down"></i>
@@ -298,25 +298,16 @@
 
 							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 								<li>
-									<a href="#">
+									<a href="<?php echo U('Admin/Account/accountSettingView');?>">
 										<i class="icon-cog"></i>
-										Settings
+										设置
 									</a>
 								</li>
 
 								<li>
-									<a href="#">
-										<i class="icon-user"></i>
-										Profile
-									</a>
-								</li>
-
-								<li class="divider"></li>
-
-								<li>
-									<a href="#">
+									<a href="<?php echo U('Admin/Account/logout');?>">
 										<i class="icon-off"></i>
-										Logout
+										退出
 									</a>
 								</li>
 							</ul>

@@ -7,6 +7,7 @@
 <link href="__PUBLIC__/Css/bootstrap-theme.css" rel="stylesheet" type="text/css">
 <link href="__PUBLIC__/Css/my.css" rel="stylesheet" type="text/css">
 <link href="__PUBLIC__/Css/sticky-footer-navbar.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/Css/my.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -27,34 +28,52 @@
           <ul class="nav navbar-nav">
             <li><a href="{:U('Index/Index/index')}">HOME</a></li>
             <li><a href="{:U('Index/Index/blog')}">BLOG</a></li>
+            <li><a href="{:U('Index/Index/product')}">OUR WORK</a></li>
 			<li  class="active"><a href="{:U('Index/Index/fame')}">FAME HALL</a></li>
             <li><a href="{:U('Index/Index/about')}">ABOUT US</a></li>
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./">SKIP</a></li>
-            <li><a href="">HIGH</a></li>
-            <li><a href="">GO</a></li>
+            <li><a href="#">SKIP</a></li>
+            <li><a href="#">HIGH</a></li>
+            <li><a href="#">GO</a></li>
           </ul>  
         </div><!--/.nav-collapse -->
       </div>
 </div>
 <div class="container">
+
 <ul class="breadcrumb">
   <li><a href="#">首页</a><span class="divider"></span></li>
   <li class="active">名人堂</li>
   </ul>
   <h1 class="page-header">Femall Hall</h1>
   
+  <div class="row">
 <ul class="thumbnails">
-<foreach name="fame" item="vo">
+<foreach name="list" item="vo">
     
-    <li class="col-lg-3 point"><a class="thumbnail" href="#"><img src="__PUBLIC__/UploadsFame/{$vo.img_src}" title='{$vo.toast}'/></a></li>
+    <li class="col-lg-3 point"><a href="{$vo.link}" target=_blank class="thumbnail" data-src="__PUBLIC__/Js/holder.js/275x150" href="#"><img  src="__PUBLIC__/UploadsFame/{$vo.img_src}" title='{$vo.toast}'/></a></li>
     
 </foreach>
 
 </ul>
-
+</div> 
+</div>
+<div class='container'> <!-- 分页 -->
+<div>
+  <ul class="pagination pagination-right" >
+  
+  <for start="1" end="$pageCount+1"  >
+  <li><a href="{:U('Index/Index/fame',array('p' => $i))}">{$i}</a></li>
+  </for>
+  </ul>
+  </div>
+  
+  <ul class="pager">
+  <li class="previous"><a href="{:U('Index/Index/fame',array('p' => $pageNow-1))}">前一页</a></li>
+  <li class="next"><a href="{:U('Index/Index/fame',array('p' => $pageNow+1))}">后一页</a></li>
+  </ul>
 </div>
 
 <!--footer-->

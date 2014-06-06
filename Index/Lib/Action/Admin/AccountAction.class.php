@@ -67,7 +67,7 @@ class AccountAction extends CommonAction{
 	public function alterAccount(){
 		if (!empty($_POST['id']) && !empty($_POST['password']) && !empty($_POST['password2'])) {
 			if ($_POST['password'] == $_POST['password2']) {
-				D('Admin')->where('id='.$_POST['id'])->setField('admin_passwd', $_POST['password']);
+				D('Admin')->where('id='.$_POST['id'])->setField('admin_passwd', md5($_POST['password']));
 				$this->ajaxReturn(1,"修改成功",1);
 			}else {
 				$this->ajaxReturn(0,"密码不一致",2);
@@ -81,7 +81,7 @@ class AccountAction extends CommonAction{
 		if ($_POST['id'] != 1) {
 			D('Admin')->where('id='.$_POST['id'])->delete();
 			$this->ajaxReturn(1,"删除成功",1);
-		}else{
+		}else if ($_POST['id'] == 1) {
 			$this->ajaxReturn(0,"超级管理员暂不支持删除",0);
 		}
 	}

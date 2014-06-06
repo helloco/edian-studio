@@ -26,14 +26,15 @@
           <ul class="nav navbar-nav">
             <li><a href="<?php echo U('Index/Index/index');?>">HOME</a></li>
             <li  class="active"><a href="<?php echo U('Index/Index/blog');?>">BLOG</a></li>
+            <li><a href="<?php echo U('Index/Index/product');?>">OUR WORK</a></li>
 			<li><a href="<?php echo U('Index/Index/fame');?>">FAME HALL</a></li>
             <li><a href="<?php echo U('Index/Index/about');?>">ABOUT US</a></li>
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./">SKIP</a></li>
-            <li><a href="">HIGH</a></li>
-            <li><a href="">GO</a></li>
+            <li><a href="#">SKIP</a></li>
+            <li><a href="#">HIGH</a></li>
+            <li><a href="#">GO</a></li>
           </ul>  
         </div><!--/.nav-collapse -->
       </div>
@@ -45,27 +46,14 @@
   <li class="active">异点博客</li>
   </ul>
 
-
-      <div class="row">
-    
-
-        <div class="col-sm-7">
-          <div class="list-group">
-            <a href="#" class="list-group-item active">
-            Blog List 
-            </a>
-            <?php if(is_array($list)): foreach($list as $key=>$vo): ?><a href="<?php echo U('Index/Index/content',array('id' => $vo['id']));?>" class="list-group-item"><?php echo ($vo["title"]); echo ($vo["time"]); ?></a><?php endforeach; endif; ?>
+	<table class="table">
 			
-			<a href="#" class="list-group-item">第<?php echo ($pageNow); ?>/<?php echo ($pageCount); ?>页 共<?php echo ($count); ?>条记录</a>
-          </div>
-        </div><!-- /.col-sm-4 -->
-        
-      </div>
-	
+			<?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr> <td><a href="<?php echo U('Index/Index/content',array('id' => $vo['id']));?>" ><?php echo ($vo["title"]); ?></a></td><td><?php echo ($vo["time"]); ?></td> </tr><?php endforeach; endif; ?>
+			</table>
   <div>
   <ul class="pagination pagination-right" >
   
-  <?php $__FOR_START_25186__=1;$__FOR_END_25186__=$pageCount+1;for($i=$__FOR_START_25186__;$i < $__FOR_END_25186__;$i+=1){ ?><li><a href="<?php echo U('Index/Index/blog',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
+  <?php $__FOR_START_5255__=1;$__FOR_END_5255__=$pageCount+1;for($i=$__FOR_START_5255__;$i < $__FOR_END_5255__;$i+=1){ ?><li><a href="<?php echo U('Index/Index/blog',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
   </ul>
   </div>
   

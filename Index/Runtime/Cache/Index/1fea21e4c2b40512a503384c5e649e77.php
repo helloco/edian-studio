@@ -3,9 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Edian Studio</title>
+
+<link href="__PUBLIC__/Css/responsive.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/Css/style.css" rel="stylesheet" type="text/css">
 <link href="__PUBLIC__/Css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="__PUBLIC__/Css/bootstrap-theme.css" rel="stylesheet" type="text/css">
-<link href="__PUBLIC__/Css/my.css" rel="stylesheet" type="text/css">
 <link href="__PUBLIC__/Css/sticky-footer-navbar.css" rel="stylesheet" type="text/css">
 <link href="__PUBLIC__/Css/my.css" rel="stylesheet" type="text/css">
 </head>
@@ -28,8 +30,8 @@
           <ul class="nav navbar-nav">
             <li><a href="<?php echo U('Index/Index/index');?>">HOME</a></li>
             <li><a href="<?php echo U('Index/Index/blog');?>">BLOG</a></li>
-            <li><a href="<?php echo U('Index/Index/product');?>">OUR WORK</a></li>
-			<li  class="active"><a href="<?php echo U('Index/Index/fame');?>">FAME HALL</a></li>
+            <li  class="active"><a href="<?php echo U('Index/Index/product');?>">OUR WORK</a></li>
+			<li><a href="<?php echo U('Index/Index/fame');?>">FAME HALL</a></li>
             <li><a href="<?php echo U('Index/Index/about');?>">ABOUT US</a></li>
             
           </ul>
@@ -42,34 +44,48 @@
       </div>
 </div>
 <div class="container">
-
-<ul class="breadcrumb">
+  <ul class="breadcrumb">
   <li><a href="#">首页</a><span class="divider"></span></li>
-  <li class="active">名人堂</li>
+  <li class="active">我们的作品</li>
   </ul>
-  <h1 class="page-header">Femall Hall</h1>
   
-  <div class="row">
-<ul class="thumbnails">
-<?php if(is_array($list)): foreach($list as $key=>$vo): ?><li class="col-lg-3 point"><a href="<?php echo ($vo["link"]); ?>" target=_blank class="thumbnail" data-src="__PUBLIC__/Js/holder.js/275x150" href="#"><img  src="__PUBLIC__/UploadsFame/<?php echo ($vo["img_src"]); ?>" title='<?php echo ($vo["toast"]); ?>'/></a></li><?php endforeach; endif; ?>
-
-</ul>
-</div> 
-</div>
-<div class='container'> <!-- 分页 -->
-<div>
-  <ul class="pagination pagination-right" >
-  
-  <?php $__FOR_START_14301__=1;$__FOR_END_14301__=$pageCount+1;for($i=$__FOR_START_14301__;$i < $__FOR_END_14301__;$i+=1){ ?><li><a href="<?php echo U('Index/Index/fame',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
-  </ul>
-  </div>
-  
-  <ul class="pager">
-  <li class="previous"><a href="<?php echo U('Index/Index/fame',array('p' => $pageNow-1));?>">前一页</a></li>
-  <li class="next"><a href="<?php echo U('Index/Index/fame',array('p' => $pageNow+1));?>">后一页</a></li>
-  </ul>
 </div>
 
+<div class="row-1">
+        <div class="container">
+        <div class="row">
+              <ul class="thumbnails thumbnails-1">
+        
+                <?php if(is_array($list)): foreach($list as $key=>$vo): ?><div class="col-lg-4">
+                  <div class="thumbnail thumbnail-1">
+                <h3><?php echo ($vo["name"]); ?></h3>
+                <img  src="__PUBLIC__/Uploads/<?php echo ($vo["img_src"]); ?>" alt="">
+                <section> 
+                    
+                      <div class="meta">
+                            <time datetime="2012-11-09" class="date-1"><i class="icon-calendar"></i></time>
+                            
+                            <a class="comments"><i class="icon-comment"></i>发布日期:<?php echo ($vo["birthday"]); ?></a>
+                        </div> 
+                        <div class="clear"></div>
+                      <p><b>简介:</b><?php echo ($vo["introduce"]); ?></p>
+                      <a href="<?php echo ($vo["download_src"]); ?>" class="btn btn-1" target=_blank>作品地址</a> </section>
+              </div>
+                </div><?php endforeach; endif; ?>
+            
+          	  </ul>
+            </div>
+              <ul class="pagination pagination-right" >
+			  <?php $__FOR_START_4020__=1;$__FOR_END_4020__=$pageCount+1;for($i=$__FOR_START_4020__;$i < $__FOR_END_4020__;$i+=1){ ?><li><a href="<?php echo U('Index/Index/product',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
+			  </ul>
+			  
+			  <ul class="pager">
+			  <li class="previous"><a href="<?php echo U('Index/Index/product',array('p' => $pageNow-1));?>">前一页</a></li>
+			  <li class="next"><a href="<?php echo U('Index/Index/product',array('p' => $pageNow+1));?>">后一页</a></li>
+			  </ul>
+      </div>
+        </div>
+        
 <!--footer-->
 <div id="footer">
       <div class="container pull-right">

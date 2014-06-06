@@ -272,7 +272,7 @@
 								</li>
 
 								<li>
-									<a href="inbox.html">
+									<a href="#">
 										See all messages
 										<i class="icon-arrow-right"></i>
 									</a>
@@ -285,7 +285,7 @@
 								<img class="nav-user-photo" src="__PUBLIC__/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									Jason
+									<?php echo ($_SESSION["adminName"]); ?>
 								</span>
 
 								<i class="icon-caret-down"></i>
@@ -293,25 +293,17 @@
 
 							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 								<li>
-									<a href="#">
+									<a href="<?php echo U('Admin/Account/accountSettingView');?>">
 										<i class="icon-cog"></i>
-										Settings
+										设置
 									</a>
 								</li>
 
-								<li>
-									<a href="#">
-										<i class="icon-user"></i>
-										Profile
-									</a>
-								</li>
-
-								<li class="divider"></li>
 
 								<li>
-									<a href="#">
+									<a href="<?php echo U('Admin/Account/logout');?>">
 										<i class="icon-off"></i>
-										Logout
+										退出
 									</a>
 								</li>
 							</ul>
@@ -611,7 +603,7 @@
 										<div>
 									  <ul class="pagination pagination-right" >
 									  
-									  <?php $__FOR_START_1636__=1;$__FOR_END_1636__=$pageCount+1;for($i=$__FOR_START_1636__;$i < $__FOR_END_1636__;$i+=1){ ?><li><a href="<?php echo U('Admin/Alter/alterFameList',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
+									  <?php $__FOR_START_23258__=1;$__FOR_END_23258__=$pageCount+1;for($i=$__FOR_START_23258__;$i < $__FOR_END_23258__;$i+=1){ ?><li><a href="<?php echo U('Admin/Alter/alterFameList',array('p' => $i));?>"><?php echo ($i); ?></a></li><?php } ?>
 									  </ul>
 									  </div>
 										<!-- /.table-responsive -->
